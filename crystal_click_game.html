@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal Tap Quest</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #game {
+      text-align: center;
+    }
+    #crystal {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    #crystal:active {
+      transform: scale(1.1);
+    }
+    #score {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <img id="crystal" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cubic_crystals.png/240px-Cubic_crystals.png" alt="Crystal">
+    <div id="score">Crystals: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+    const scoreDisplay = document.getElementById("score");
+    const crystal = document.getElementById("crystal");
+
+    crystal.addEventListener("click", () => {
+      score++;
+      scoreDisplay.textContent = `Crystals: ${score}`;
+    });
+  </script>
+</body>
+</html>
