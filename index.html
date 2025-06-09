@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crystal Tap Quest</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    .score {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    .crystal {
+      width: 150px;
+      height: 150px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Crystal_icon.svg/1200px-Crystal_icon.svg.png');
+      background-size: cover;
+      margin: 20px auto;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+    .crystal:active {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>💎 Crystal Tap Quest</h1>
+  <div class="score">Score: <span id="score">0</span></div>
+  <div class="crystal" onclick="collectCrystal()"></div>
+
+  <script>
+    let score = 0;
+    function collectCrystal() {
+      score++;
+      document.getElementById("score").textContent = score;
+    }
+  </script>
+</body>
+</html>
